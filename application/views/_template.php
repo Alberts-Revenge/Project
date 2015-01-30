@@ -5,17 +5,23 @@
 	<meta charset="UTF-8">
 	<title>{pagetitle}</title>
 	<link rel="stylesheet" href="../css/style.css" type="text/css">
+        <style>
+            h1   {color:#ff0000}
+            p {color:#ff0000}
+        </style>
 </head>
 <body>
 	<div id="background">
 		<div id="page">
 			<div id="header">
 				<div id="logo">
-					<a href="index.html"><img src="../images/logo.png" alt="LOGO" height="112" width="118"></a>
+					<a href="../index.php"><img src="../images/logo.png" alt="LOGO" height="112" width="118"></a>
+                                        
 				</div>
+                            <div id ="title"><h1 align="center">Dark Lord Hangout</h1></div>
 				<div id="navigation">
 					<ul>
-						<li class="selected">
+						<li>
 							<a href="/">Home</a>
 						</li>
 						<li>
@@ -37,7 +43,7 @@
 		</div>
 		
 			
-			<p>
+			<p align="center">
 				© 2023 by Albert's Revenge Ltd. All Rights Reserved.
 			</p>
 		</div>
