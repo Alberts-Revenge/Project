@@ -10,6 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Jedihunt extends Application {
 
+
     public function index() {
 //		$this->load->view('jedihunt');
         $this->data['pagebody'] = 'jedihunt';

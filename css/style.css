@@ -44,7 +44,7 @@ img {
 	background: url(../images/bg-navigation.png) no-repeat;
 	clear: both;
 	height: 50px;
-	width: 860px;
+	width: 480px;
 	margin: 0 auto;
 	padding: 1px;
 }
@@ -83,8 +83,7 @@ img {
 	color: #6d6157;
 }
 #navigation li.selected a {
-	background-position: 0 0;
-	color: #e4e1bd;
+	background-position: 1 0;
 }
 /*------------------------------ CONTENTS ------------------------------*/
 #contents {
@@ -93,14 +92,14 @@ img {
 	padding: 0 47px;
 }
 #contents h1 {
-	color: #316e66;
+	color: #ff0000;
 	font: 26px/30px "Times New Roman", Times, serif;
 	margin: 18px 0 20px;
 	padding-left: 2px;
 	text-transform: uppercase;
 }
 #contents div.body h1, #contents h2 {
-	color: #316e66;
+	color: #ff0000;
 	font: 30px/30px "Times New Roman", Times, serif;
 	margin: 0 0 18px;
 	text-transform: uppercase;
@@ -114,7 +113,7 @@ img {
 	text-decoration: none;
 }
 #contents p {
-	color: #5a4535;
+	color: #ffffff;
 	font-size: 15px;
 	line-height: 30px;
 	margin: 0;
