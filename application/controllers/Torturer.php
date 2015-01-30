@@ -37,7 +37,7 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Torturer extends CI_Controller {
+class Torturer extends Application {
 
 	/**
 	 * Index Page for this controller.
@@ -56,7 +56,9 @@ class Torturer extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('torturer');
+		//$this->load->view('torturer');
+                $this->data['pagebody'] = 'torturer';
+                $this->render();
 	}
 }
 

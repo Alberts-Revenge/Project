@@ -37,7 +37,7 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Tombs extends CI_Controller {
+class Tombs extends Application {
 
 	/**
 	 * Index Page for this controller.
@@ -56,7 +56,9 @@ class Tombs extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('tombs');
+		//$this->load->view('tombs');
+                $this->data['pagebody'] = 'tombs';
+                $this->render();
 	}
 }
 
