@@ -18,13 +18,13 @@
                                             <li><a href="/">Home</a></li>
                                         </li>
                                         <li>
-                                            <li><a href="/jedihunt">Jedi Hunting Hotspots</a></li>
+                                            <li><a href="/jedihunt">Jedi</a></li>
                                         </li>
                                         <li>
-                                            <li><a href="/sithtombs">Must-Visit Tombs</a></li>
+                                            <li><a href="/sithtombs">Tombs</a></li>
                                         </li>
                                         <li>
-                                            <li><a href="/torturer">Torture Volunteering</a></li>
+                                            <li><a href="/torturer">Torture </a></li>
                                         </li>
                                     </ul>
                                 </div>
