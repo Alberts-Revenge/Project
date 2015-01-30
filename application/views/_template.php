@@ -4,14 +4,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{pagetitle}</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
 	<div id="background">
 		<div id="page">
 			<div id="header">
 				<div id="logo">
-					<a href="index.html"><img src="images/logo.png" alt="LOGO" height="112" width="118"></a>
+					<a href="index.html"><img src="../images/logo.png" alt="LOGO" height="112" width="118"></a>
 				</div>
 				<div id="navigation">
 					<ul>
@@ -19,13 +19,13 @@
 							<a href="/">Home</a>
 						</li>
 						<li>
-							<a href="/torturer">Torture</a>
+							<a href="../index.php/torturer">Torture</a>
 						</li>
 						<li>
-							<a href="/jediHunt">Jedi Hunting</a>
+							<a href="../index.php/jediHunt">Jedi Hunting</a>
 						</li>
 						<li>
-							<a href="/tombs">Tombs</a>
+							<a href="../index.php/tombs">Tombs</a>
 						</li>
 						
 					</ul>

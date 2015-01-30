@@ -8,11 +8,13 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Jedihunt extends CI_Controller {
+class Jedihunt extends Application {
 
 	public function index()
 	{
-		$this->load->view('jedihunt');
+		$this->data['pagebody'] = 'jediHunt';
+                $this->render();
+                //$this->load->view('jedihunt');
 	}
 }
 

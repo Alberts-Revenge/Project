@@ -52,14 +52,5 @@
 						<a href="foods.html"><img src="images/food.png" alt="Img"></a>
 					</div>
 				</div>
-			</div>
-		</div>
-		
-			
-			<p>
-				© 2023 by Albert's Revenge Ltd. All Rights Reserved.
-			</p>
-		</div>
-	</div>
 </body>
 </html>
