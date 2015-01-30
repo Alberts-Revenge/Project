@@ -1,7 +1,4 @@
-<div id="adbox">
-    <img src="images/sea-sound.jpg" alt="Img">
-    <h1>Enjoy the Summer with Us!</h1>
-</div>
+
 <div id="main">
     <div class="box">
         <div>
@@ -39,12 +36,12 @@
 </div>
 <div id="sidebar">
     <div class="section">
-        <a href="rooms.html"><img src="/assets/images/rooms.png" alt="Img"></a>
+        <a href="jedihunt.php"><img src="/assets/images/rooms.png" alt="Img"></a>
     </div>
     <div class="section">
-        <a href="dives.html"><img src="/assets/images/dive-site.png" alt="Img"></a>
+        <a href="sithtombs.php"><img src="/assets/images/dive-site.png" alt="Img"></a>
     </div>
     <div class="section">
-        <a href="foods.html"><img src="/assets/images/food.png" alt="Img"></a>
+        <a href="torturer.php"><img src="/assets/images/food.png" alt="Img"></a>
     </div>
 </div>

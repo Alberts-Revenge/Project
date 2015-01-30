@@ -56,6 +56,7 @@ class Welcome extends Application {
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
     public function index() {
+//        $this->load->view('welcome');
         $this->data['pagebody'] = 'welcome';
         $this->render();
     }
