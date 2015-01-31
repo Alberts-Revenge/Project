@@ -2,6 +2,7 @@
 
 class Info extends CI_Model {
 
+    // jediHunt mock data
     var $data_jedihunt = array(
         array(
             'id' => '1',
@@ -28,6 +29,8 @@ class Info extends CI_Model {
             'pic' => '../images/ossus.jpg',
             'info' => 'Ossus, originally called Idux whilst under the control of Xim\'s empire, was the third planet in the Adega system in the Auril sector. Known to the galaxy since before 25,000 BBY, when the Jedi expanded there from the planet Tython and established a Jedi Academy, Ossus would become a popular world of the Galactic Republic.')
     );
+        // tombs mock data
+
     var $data_tombs = array(
         array(
             'id' => '1',
@@ -54,6 +57,8 @@ class Info extends CI_Model {
             'pic' => '../images/kashyyyk.jpg',
             'info' => 'Kashyyyk (see pronunciation), also known as Wookiee Planet C, Edean, G5-623, and Wookiee World, was a Mid Rim planet.')
     );
+        // torturer mock data
+
     var $data_torturer = array(
         array(
             'id' => '1',
@@ -86,44 +91,22 @@ class Info extends CI_Model {
         parent::__construct();
     }
 
-    // retrieve a single quote
-    public function get($which) {
-        // iterate over the data until we find the one we want
-        foreach ($this->data as $record)
-            if ($record['id'] == $which)
-                return $record;
-        return null;
-    }
+    
 
-    // retrieve all of the quotes
-    public function all() {
-        return $this->data;
-    }
-
-    // retrieve all of the planets by category
+    // retrieve all of the planets for jediHunt
     public function all_for_jedihunt() {
         return $this->data_jedihunt;
     }
 
-    // retrieve all of the planets by category
+    // retrieve all of the planets for tombs
     public function all_for_tombs() {
         return $this->data_tombs;
     }
 
-    // retrieve all of the planets by category
+    // retrieve all of the planets for torturer
     public function all_for_torturer() {
         return $this->data_torturer;
     }
 
-    // retrieve the first quote
-    public function first() {
-        return $this->data[0];
-    }
-
-    // retrieve the last quote
-    public function last() {
-        $index = count($this->data) - 1;
-        return $this->data[$index];
-    }
 
 }
