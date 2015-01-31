@@ -58,6 +58,7 @@ class Tombs extends Application {
     public function index() {
         //$this->load->view('tombs');
         $this->data['pagebody'] = 'tombs';
+        // set up data for tombs view
         $source = $this->info->all_for_tombs();
         $planets = array();
         foreach ($source as $record) {

@@ -49,7 +49,7 @@ class Torturer extends Application {
     public function index() {
 //		$this->load->view('torturer');
         $this->data['pagebody'] = 'torturer';
-        
+        // set up data for torturer view
         $source = $this->info->all_for_torturer();
         $planets = array();
         foreach ($source as $record) {

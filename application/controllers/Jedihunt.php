@@ -14,13 +14,7 @@ class Jedihunt extends Application {
 //		$this->load->view('jedihunt');
 
         $this->data['pagebody'] = 'jedihunt';
-
-//        $source = $this->info->all();
-//        $planets = array();
-//        foreach ($source as $record) {
-//            $planets[] = array('planet' => $record['planet'], 'pic' => $record['pic'], 'info' => $record['info']);
-//        }
-//        $this->data['$planets'] = $planets;
+        // set up data for jediHunt
 
         $source = $this->info->all_for_jedihunt();
         $planets = array();
