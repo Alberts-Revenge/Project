@@ -10,10 +10,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Jedihunt extends Application {
 
-
     public function index() {
 //		$this->load->view('jedihunt');
+
         $this->data['pagebody'] = 'jedihunt';
+
+//        $source = $this->info->all();
+//        $planets = array();
+//        foreach ($source as $record) {
+//            $planets[] = array('planet' => $record['planet'], 'pic' => $record['pic'], 'info' => $record['info']);
+//        }
+//        $this->data['$planets'] = $planets;
+
+        $source = $this->info->all_for_jedihunt();
+        $planets = array();
+        foreach ($source as $record) {
+            $planets[] = array('planet' => $record['planet'], 'pic' => $record['pic'], 'info' => $record['info']);
+        }
+        $this->data['planets'] = $planets;
+
         $this->render();
     }
 

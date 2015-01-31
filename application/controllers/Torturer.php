@@ -4,8 +4,8 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
-=======
-/**
+  =======
+  /**
  * CodeIgniter
  *
  * An open source application development framework for PHP
@@ -49,6 +49,14 @@ class Torturer extends Application {
     public function index() {
 //		$this->load->view('torturer');
         $this->data['pagebody'] = 'torturer';
+        
+        $source = $this->info->all_for_torturer();
+        $planets = array();
+        foreach ($source as $record) {
+            $planets[] = array('planet' => $record['planet'], 'pic' => $record['pic'], 'info' => $record['info']);
+        }
+        $this->data['planets'] = $planets;
+
         $this->render();
     }
 
