@@ -18,7 +18,7 @@
         <div id="background">
             <div id="page">
                 <div id="header">
-                    <div id="logo">html
+                    <div id="logo">
                         <a href="../index.php"><img src="../images/logo.png" alt="LOGO" height="112" width="118"></a>
 
                     </div>
