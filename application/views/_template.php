@@ -5,6 +5,10 @@
         <meta charset="UTF-8">
         <title>{pagetitle}</title>
         <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link href="../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
         <style>
             h1   {color:#ff0000}
             p {color:#ff0000}
@@ -47,6 +51,5 @@
                 © 2023 by Albert's Revenge Ltd. All Rights Reserved.
             </p>
         </div>
-    </div>
-</body>
+    </body>
 </html>
