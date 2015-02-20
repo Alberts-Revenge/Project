@@ -32,7 +32,7 @@
                                 <a href="../index.php/torturer">Torture</a>
                             </li>
                             <li>
-                                <a href="../index.php/jediHunt">Jedi Hunting</a>
+                                <a href="../index.php/jedihunt">Jedi Hunting</a>
                             </li>
                             <li>
                                 <a href="../index.php/tombs">Tombs</a>
