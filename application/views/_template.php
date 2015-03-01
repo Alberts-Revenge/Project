@@ -4,11 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <title>{pagetitle}</title>
-        <link rel="stylesheet" href="../css/style.css" type="text/css">
-        <link href="../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+        <link href="/assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
         <style>
             h1   {color:#ff0000}
             p {color:#ff0000}
@@ -19,7 +19,7 @@
             <div id="page">
                 <div id="header">
                     <div id="logo">
-                        <a href="../index.php"><img src="../images/logo.png" alt="LOGO" height="112" width="118"></a>
+                        <a href="/"><img src="/assets/images/logo.png" alt="LOGO" height="112" width="118"></a>
 
                     </div>
                     <div id ="title"><h1 align="center">Dark Lord Hangout</h1></div>
@@ -29,13 +29,13 @@
                                 <a href="/">Home</a>
                             </li>
                             <li>
-                                <a href="../index.php/torturer">Torture</a>
+                                <a href="/torturer">Torture</a>
                             </li>
                             <li>
-                                <a href="../index.php/jedihunt">Jedi Hunting</a>
+                                <a href="/jedihunt">Jedi Hunting</a>
                             </li>
                             <li>
-                                <a href="../index.php/tombs">Tombs</a>
+                                <a href="/tombs">Tombs</a>
                             </li>
 
                         </ul>
