@@ -1,5 +1,5 @@
 <div>
-    <img src="images/sea-sound.jpg" alt="Img">
+    <img src="/assets/images/sea-sound.jpg" alt="Img">
     <h1>Welcome to the Dark Lord Hangout!</h1>
     <p>
 	Looking for more of those pesky Jedi to hunt? We know they are a nuisance and difficult to find, that is why we have an updated list of Jedi hotspots for your entertainment.
