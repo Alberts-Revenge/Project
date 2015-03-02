@@ -42,18 +42,28 @@
  * @filesource
  */
 
-
 class Torturer extends Application {
 
     public function index() {
         $this->data['pagebody'] = 'torturer';
-        
+
         $this->data['planets'] = $this->torturers->all();
 
         $this->render();
     }
 
-    
+    // method to display just a single quote
+    function one($id) {
+        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+        $this->data = array_merge($this->data, (array) $this->torturers->get($id));
+
+        // invoke the rating widget
+        $this->caboose->needed('jrating', 'hollywood');
+        $this->data['average'] = ($this->data['vote_count'] > 0) ? ($this->data['vote_total'] / $this->data['vote_count']) : 0;
+
+        $this->render();
+    }
+
 }
 
 /* End of file welcome.php */
