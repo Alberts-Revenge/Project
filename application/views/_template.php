@@ -7,8 +7,7 @@
         <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
         <link href="/assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
         <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        {caboose_styles}
         <style>
             h1   {color:#ff0000}
             p {color:#ff0000}
@@ -20,7 +19,6 @@
                 <div id="header">
                     <div id="logo">
                         <a href="/"><img src="/assets/images/logo.png" alt="LOGO" height="112" width="118"></a>
-
                     </div>
                     <div id ="title"><h1 align="center">Dark Lord Hangout</h1></div>
                     <div id="navigation">
@@ -45,11 +43,13 @@
                     {content}
                 </div>
             </div>
-
-
             <p align="center">
                 © 2023 by Albert's Revenge Ltd. All Rights Reserved.
             </p>
         </div>
+        <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        {caboose_scripts}
+        {caboose_trailings}
     </body>
 </html>

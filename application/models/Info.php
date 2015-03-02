@@ -59,32 +59,32 @@ class Info extends CI_Model {
     );
         // torturer mock data
 
-    var $data_torturer = array(
-        array(
-            'id' => '1',
-            'category' => 'torturer',
-            'planet' => 'Ryloth',
-            'pic' => '../images/ryloth.jpg',
-            'info' => 'Ryloth, also known as Twi\'lek, and Twi\'lek Prime,[9] was the harsh, rocky homeworld of the Twi\'leks, an Outer Rim Territories world located on the Corellian Run and forming one endpoint of the Death Wind Corridor.'),
-        array(
-            'id' => '2',
-            'category' => 'torturer',
-            'planet' => 'Taris',
-            'pic' => '../images/taris.png',
-            'info' => 'Taris was an urban planet in the fifth orbit of its star, located in the Taris system, within the Ojoster sector, of the Outer Rim Territories, in turn Taris was orbited by four moons, including Rogue. The term Tarisian was used to describe people and products from the planet.'),
-        array(
-            'id' => '3',
-            'category' => 'torturer',
-            'planet' => 'Dromund Kaas',
-            'pic' => '../images/dromund_Kaas.png',
-            'info' => 'Dromund Kaas was the third planet in the Dromund system, a star system in the Sith Worlds region of the Outer Rim Territories\'s Esstran sector. '),
-        array(
-            'id' => '4',
-            'category' => 'torturer',
-            'planet' => 'Korriban',
-            'pic' => '../images/korriban.png',
-            'info' => 'Korriban, known as Pesegam during the reign of Xim, and also known as Moraband by the time of the Clone Wars, was the sole planet in the Horuset system, located across the galaxy from Koros Major.')
-    );
+//    var $data_torturer = array(
+//        array(
+//            'id' => '1',
+//            'category' => 'torturer',
+//            'planet' => 'Ryloth',
+//            'pic' => '../images/ryloth.jpg',
+//            'info' => 'Ryloth, also known as Twi\'lek, and Twi\'lek Prime,[9] was the harsh, rocky homeworld of the Twi\'leks, an Outer Rim Territories world located on the Corellian Run and forming one endpoint of the Death Wind Corridor.'),
+//        array(
+//            'id' => '2',
+//            'category' => 'torturer',
+//            'planet' => 'Taris',
+//            'pic' => '../images/taris.png',
+//            'info' => 'Taris was an urban planet in the fifth orbit of its star, located in the Taris system, within the Ojoster sector, of the Outer Rim Territories, in turn Taris was orbited by four moons, including Rogue. The term Tarisian was used to describe people and products from the planet.'),
+//        array(
+//            'id' => '3',
+//            'category' => 'torturer',
+//            'planet' => 'Dromund Kaas',
+//            'pic' => '../images/dromund_Kaas.png',
+//            'info' => 'Dromund Kaas was the third planet in the Dromund system, a star system in the Sith Worlds region of the Outer Rim Territories\'s Esstran sector. '),
+//        array(
+//            'id' => '4',
+//            'category' => 'torturer',
+//            'planet' => 'Korriban',
+//            'pic' => '../images/korriban.png',
+//            'info' => 'Korriban, known as Pesegam during the reign of Xim, and also known as Moraband by the time of the Clone Wars, was the sole planet in the Horuset system, located across the galaxy from Koros Major.')
+//    );
 
     // Constructor
     public function __construct() {
@@ -104,9 +104,9 @@ class Info extends CI_Model {
     }
 
     // retrieve all of the planets for torturer
-    public function all_for_torturer() {
-        return $this->data_torturer;
-    }
+//    public function all_for_torturer() {
+//        return $this->data_torturer;
+//    }
 
 
 }

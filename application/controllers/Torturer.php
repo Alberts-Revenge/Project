@@ -42,24 +42,18 @@
  * @filesource
  */
 
-defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Torturer extends Application {
 
     public function index() {
-//		$this->load->view('torturer');
         $this->data['pagebody'] = 'torturer';
-        // set up data for torturer view
-        $source = $this->info->all_for_torturer();
-        $planets = array();
-        foreach ($source as $record) {
-            $planets[] = array('planet' => $record['planet'], 'pic' => $record['pic'], 'info' => $record['info']);
-        }
-        $this->data['planets'] = $planets;
+        
+        $this->data['planets'] = $this->torturers->all();
 
         $this->render();
     }
 
+    
 }
 
 /* End of file welcome.php */
