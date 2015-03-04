@@ -8,7 +8,7 @@
 class Application extends CI_Controller {
 
     protected $data = array();      // parameters for view components
-    protected $id;		  // identifier for our content
+    protected $id;    // identifier for our content
     protected $choices = array(// our menu navbar
 	'Home' => '/', 'Torturer' => '/torturer', 'JediHunt' => '/jedihunt', 'Tombs' => '/tombs'
     );
@@ -31,7 +31,13 @@ class Application extends CI_Controller {
      */
     function render() {
         $this->data['menubar'] = build_menu_bar($this->choices);
-	$this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
+        $this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
+
+        // convert Carboose output into view parameters
+        $this->data['caboose_styles'] = $this->caboose->styles();
+        $this->data['caboose_scripts'] = $this->caboose->scripts();
+        $this->data['caboose_trailings'] = $this->caboose->trailings();
+
         $this->data['data'] = &$this->data;
         $this->parser->parse('_template', $this->data);
     }

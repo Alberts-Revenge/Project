@@ -96,7 +96,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
 
-$autoload['libraries'] = array('parser', 'database');
+$autoload['libraries'] = array('parser', 'database', 'caboose');
 
 
 /*
@@ -173,7 +173,7 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 
-$autoload['model'] = array('info', 'jedihuntmodel');
+$autoload['model'] = array('info', 'torturers', 'tomb', 'jedihuntmodel');
 
 
 /* End of file autoload.php */

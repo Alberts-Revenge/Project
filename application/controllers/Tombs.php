@@ -36,39 +36,28 @@
  * @since	Version 1.0.0
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tombs extends Application {
 
-    /**
-     * Index Page for this controller.
-     *
-     * Maps to the following URL
-     * 		http://example.com/index.php/welcome
-     * 	- or -
-     * 		http://example.com/index.php/welcome/index
-     * 	- or -
-     * Since this controller is set as the default controller in
-     * config/routes.php, it's displayed at http://example.com/
-     *
-     * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
-     * @see http://codeigniter.com/user_guide/general/urls.html
-     */
     public function index() {
-        //$this->load->view('tombs');
         $this->data['pagebody'] = 'tombs';
-        // set up data for tombs view
-        $source = $this->info->all_for_tombs();
-        $planets = array();
-        foreach ($source as $record) {
-            $planets[] = array('planet' => $record['planet'], 'pic' => $record['pic'], 'info' => $record['info']);
-        }
-        $this->data['planets'] = $planets;
+
+        $this->data['planets'] = $this->tomb->all();
+
         $this->render();
     }
 
-}
+    // method to display just a single quote
+    function one($id) {
+        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+        $this->data = array_merge($this->data, (array) $this->tomb->get($id));
 
+        // invoke the rating widget
+//        $this->caboose->needed('jrating', 'hollywood');
+//        $this->data['average'] = ($this->data['vote_count'] > 0) ? ($this->data['vote_total'] / $this->data['vote_count']) : 0;
+
+        $this->render();
+    }
+}
 /* End of file welcome.php */
 /* Location: ./application/controllers/Welcome.php */
