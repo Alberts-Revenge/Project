@@ -6,7 +6,7 @@
             <div class="span4">
                 <a href="/torturer/one/{id}"><h2>{name}</h2></a>
                 <img src="/assets/images/{picture}"/>
-                <p>{description}<br/></p>
+                <p>{brief}<br/></p>
             </div>
             {/planets}
         </div>
