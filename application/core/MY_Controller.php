@@ -10,17 +10,20 @@ class Application extends CI_Controller {
     protected $data = array();      // parameters for view components
     protected $id;    // identifier for our content
     protected $choices = array(// our menu navbar
-        'Home' => '/', 'Torturer' => '/torturer', 'JediHunt' => '/jedihunt', 'Tombs' => '/tombs'
+	'Home' => '/', 'Torturer' => '/torturer', 'JediHunt' => '/jedihunt', 'Tombs' => '/tombs'
     );
 
     /**
      * Constructor.
      * Establish view parameters & load common helpers
      */
-    function __construct() {
-        parent::__construct();
-        $this->data = array();
-        $this->data['pagetitle'] = 'Welcome, Dark Lord';
+    function __construct()
+    {
+	parent::__construct();
+	$this->data = array();
+	$this->data['pagetitle'] = 'Welcome, Dark Lord';
+        
+        $this->errors = array();
     }
 
     /**

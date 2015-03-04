@@ -254,6 +254,7 @@ class MY_Model extends CI_Model implements Active_Record {
 
     // Determine the highest key used
     function highest() {
+
 	$key = $this->_keyField;
         $this->db->select_max($key);
         $query = $this->db->get($this->_tableName);

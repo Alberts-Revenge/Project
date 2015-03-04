@@ -11,6 +11,9 @@
         <style>
             h1   {color:#ff0000}
             p {color:#ff0000}
+            a {color:#ffffff}
+            td {color:#ff0000}
+            th {color:#ffffff}
         </style>
     </head>
     <body>
