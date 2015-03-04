@@ -542,3 +542,5 @@ hr {
 #connect a.googleplus:hover {
 	background-position: 0 -197px;
 }
+
+.errors {color: red; font-weight:bold; font-size:large};

@@ -10,7 +10,7 @@ class Application extends CI_Controller {
     protected $data = array();      // parameters for view components
     protected $id;		  // identifier for our content
     protected $choices = array(// our menu navbar
-	'Home' => '/', 'Torturer' => '/torturer', 'JediHunt' => '/jediHunt', 'Tombs' => '/tombs'
+	'Home' => '/', 'Torturer' => '/torturer', 'JediHunt' => '/jedihunt', 'Tombs' => '/tombs'
     );
 
     /**
@@ -22,6 +22,8 @@ class Application extends CI_Controller {
 	parent::__construct();
 	$this->data = array();
 	$this->data['pagetitle'] = 'Welcome, Dark Lord';
+        
+        $this->errors = array();
     }
 
     /**
