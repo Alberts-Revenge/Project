@@ -60,7 +60,8 @@ class Torturer extends Application {
         // invoke the rating widget
         $this->caboose->needed('jrating', 'hollywood');
         $this->data['average'] = ($this->data['vote_count'] > 0) ? ($this->data['vote_total'] / $this->data['vote_count']) : 0;
-
+//        echo $this->data['average'];
+//        die();
         $this->render();
     }
 
@@ -73,11 +74,11 @@ class Torturer extends Application {
         $id = intval($_POST['idBox']);
         $rate = intval($_POST['rate']);
         // update the posting
-        $record = $this->quotes->get($id);
+        $record = $this->torturers->get($id);
         if ($record != null) {
             $record->vote_total += $rate;
             $record->vote_count++;
-            $this->quotes->update($record);
+            $this->torturers->update($record);
         }
         $response = 'Thanks for voting!';
         echo json_encode($response);
