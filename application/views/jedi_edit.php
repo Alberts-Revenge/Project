@@ -3,7 +3,7 @@
     <form action ="/jedihunt/confirm" method = "post" enctype="multipart/form-data">
         {fName}
         {fLocation}
-        <input type='file' name='userfile' size='20' />"; 
+        <input type='file' name='userfile' size='20' /> 
         {fDescription}
         {fSubmit}
     </form>
