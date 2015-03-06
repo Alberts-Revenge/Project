@@ -60,11 +60,11 @@ class Admin extends Application {
     }
 
     public function torturer_confirm($id = null) {
-        if ($id == null) 
+        if ($id == null)
             $record = $this->torturers->create();
-        else 
+        else
             $record = $this->torturers->get($id);
-        
+
         if (!$this->upload->do_upload()) {
             $this->errors[] = $this->upload->display_errors();
         } else {
@@ -115,6 +115,19 @@ class Admin extends Application {
         redirect('/admin/tomb');
     }
 
+    public function tomb_comment_list($tombid) {
+        $this->data['pagebody'] = 'tomb_edit_comment';
+        $this->data['name'] = $this->tomb->get($tombid)->name;
+        $comments = $this->tombcomment->some('tombid', $tombid);
+        $this->data['allcomments'] = $comments;
+        $this->render();
+    }
+
+    public function tomb_remove_comment( $tombcommentid) {
+        $this->tombcomment->delete($tombcommentid);
+        redirect('/admin/tomb');
+    }
+
     public function tomb_add() {
         $tomb = $this->tomb->create();
         $this->tomb_present($tomb);
@@ -146,9 +159,9 @@ class Admin extends Application {
     }
 
     public function tomb_confirm($id = null) {
-        if ($id == null) 
-        $record = $this->tomb->create();
-        else 
+        if ($id == null)
+            $record = $this->tomb->create();
+        else
             $record = $this->tomb->get($id);
 
         if (!$this->upload->do_upload()) {
