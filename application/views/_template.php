@@ -14,6 +14,7 @@
             a {color:#ffffff}
             td {color:#ff0000}
             th {color:#ffffff}
+            form {color:#ff0000}
         </style>
     </head>
     <body>
