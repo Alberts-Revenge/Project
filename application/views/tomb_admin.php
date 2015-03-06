@@ -13,11 +13,11 @@
         <td><img src="/assets/images/{picture}" height="100" width="100"/></td>
         <td>{brief}</td>
         <td>{description}</td>
-        <td><a href='/admin/tomb_edit/{id}'>Edit</a></td>
-        <td><a href='/admin/tomb_remove/{id}'>Remove</a></td>
+        <td><a href='/admin/tomb_edit/{id}' class="btn btn-primary btn-success">Edit</a></td>
+        <td><a href='/admin/tomb_remove/{id}' class="btn btn-primary btn-success">Remove</a></td>
     </tr>
     {/tomb}
 </table> 
 <!--Added new link for adding new Tomb -->
 <br>
-<a href='/admin/tomb_add'>Add a new Tomb</a>
+<a href='/admin/tomb_add' class="btn btn-primary btn-success">Add a new Tomb</a>
