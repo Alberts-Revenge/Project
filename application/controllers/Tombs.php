@@ -36,8 +36,14 @@
  * @since	Version 1.0.0
  * @filesource
  */
-
 class Tombs extends Application {
+
+    function __construct() {
+        parent::__construct();
+
+        // load the helper to display the form
+        $this->load->helper('formfields');
+    }
 
     public function index() {
         $this->data['pagebody'] = 'tombs';
@@ -48,16 +54,68 @@ class Tombs extends Application {
     }
 
     // method to display just a single quote
-    function one($id) {
-        $this->data['pagebody'] = 'justone';    // this is the view we want shown
-        $this->data = array_merge($this->data, (array) $this->tomb->get($id));
+    function one($tombid) {
+        $this->data['pagebody'] = 'tomb_comment';    // this is the view we want shown
 
-        // invoke the rating widget
-//        $this->caboose->needed('jrating', 'hollywood');
-//        $this->data['average'] = ($this->data['vote_count'] > 0) ? ($this->data['vote_total'] / $this->data['vote_count']) : 0;
+        $this->data['name'] = $this->tomb->get($tombid)->name;
+        $this->data['picture'] = $this->tomb->get($tombid)->picture;
+        $this->data['description'] = $this->tomb->get($tombid)->description;
+
+        $comments = $this->tombcomment->some('tombid', $tombid);
+        $this->data['allcomments'] = $comments;
+
+        $this->data['id'] = $tombid;
 
         $this->render();
     }
+
+    // Present a comment for adding/editing
+    function present($tombid, $id = null) {
+        // format any errors
+        $message = '';
+        if (count($this->errors) > 0) {
+            foreach ($this->errors as $booboo)
+                $message .= $booboo . BR;
+        }
+        $this->data['message'] = $message;
+
+        $this->data['name'] = $this->tomb->get($tombid)->name;
+        $this->data['tombid'] = $tombid;
+        $record = ($id == null) ? $this->tombcomment->create() : $this->tombcomment->get($id);
+        $this->data['fcomment'] = makeTextArea('Comment', 'comment', $record->comment);
+        $this->data['pagebody'] = 'tomb_add_comment';
+
+        // added the button with the formfileds helper
+        $this->data['fsubmit'] = makeSubmitButton('New Comment', "Click here to validate the comment data", 'btn-success');
+        $this->render();
+    }
+
+    function add_comment($tombid) {
+        $this->present($tombid);
+    }
+
+    // process a quotation edit
+    function confirm($tombid) {
+        $record = $this->tombcomment->create();
+        // Extract submitted fields
+
+        $record->id = $this->tombcomment->size() + 1;
+        $record->tombid = $tombid;
+        $record->comment = $this->input->post('comment');
+
+        // validation
+//        if (empty($record->comment))
+//            $this->errors[] = 'You must leave some comment.';
+//        if (strlen($record->comment) < 20)
+//            $this->errors[] = 'A comment must be at least 20 characters long.';
+
+
+        $this->tombcomment->add($record);
+
+        redirect('/tombs/one/' . $tombid);
+    }
+
 }
+
 /* End of file welcome.php */
 /* Location: ./application/controllers/Welcome.php */
