@@ -55,7 +55,7 @@ class Admin extends Application {
         $this->data['pagebody'] = 'torturer_edit';
 
         // added the button with the formfileds helper
-        $this->data['fsubmit'] = makeSubmitButton('Add Torurer', "Click here to validate the Torurer data", 'btn-success');
+        $this->data['fsubmit'] = makeSubmitButton('Add Torturer', "Click here to validate the Torurer data", 'btn-success');
         $this->render();
     }
 
@@ -201,6 +201,90 @@ class Admin extends Application {
 
 
         redirect('/admin/tomb');
+    }
+    public function jedihunt() {
+        $this->data['pagebody'] = 'jedihunt_admin';
+        $this->data['jedihunt'] = $this->jedihuntmodel->all();
+
+        $this->render();
+    }
+
+    public function jedihunt_add() {
+        $jedihunt = $this->jedihuntmodel->create();
+        $this->jedihunt_present($jedihunt);
+    }
+
+    public function jedihunt_remove($id) {
+        $this->jedihuntmodel->delete($id);
+
+        redirect('/admin/jedihunt');
+    }
+
+    public function jedihunt_edit($id) {
+        $jedihunt = $this->jedihuntmodel->get($id);
+        $this->jedihunt_present($jedihunt);
+    }
+
+    public function jedihunt_present($jedihunt) {
+        // format any errors
+        $message = '';
+        if (count($this->errors) > 0) {
+            foreach ($this->errors as $booboo)
+                $message .= $booboo . BR;
+        }
+        $this->data['message'] = $message;
+        $this->data['ID'] = $jedihunt->ID;
+        $this->data['fname'] = makeTextField('Name', 'Name', $jedihunt->Name);
+        $this->data['fbrief'] = makeTextArea('Location', 'Location', $jedihunt->Location);
+        $this->data['fdescription'] = makeTextArea('Description', 'Description', $jedihunt->Description);
+        $this->data['pagebody'] = 'jedihunt_edit';
+
+        // added the button with the formfileds helper
+        $this->data['fsubmit'] = makeSubmitButton('Add Jedi', "Click here to validate the Torurer data", 'btn-success');
+        $this->render();
+    }
+
+    public function jedihunt_confirm($id = null) {
+        if ($id == null)
+            $record = $this->jedihuntmodel->create();
+        else
+            $record = $this->jedihuntmodel->get($id);
+
+        if (!$this->upload->do_upload()) {
+            $this->errors[] = $this->upload->display_errors();
+        } else {
+            // Extract submitted fields
+            $record->Name = $this->input->post('Name');
+            $record->Location = $this->input->post('Location');
+            $data = $this->upload->data();
+            $record->Pic = $data['file_name'];
+            $record->Description = $this->input->post('Description');
+
+            // validation
+            if (empty($record->Name))
+                $this->errors[] = 'You must specify the name of the Torurer';
+            if (empty($record->Location))
+                $this->errors[] = 'Please provide a brief description for the Torurer.';
+            if (empty($record->Description))
+                $this->errors[] = 'Please provide a description for the Torurer.';
+
+            // This error checking for Pic does not work, Master Jedi Yoda could not Help :(
+            //if (empty($record->Pic))
+            //  $this->errors[] = 'Please specify a picture for the jedi scum';
+        }
+
+        // redisplay if any errors
+        if (count($this->errors) > 0) {
+            $this->jedihunt_present($record);
+            return; // make sure we don't try to save anything
+        }
+
+        if (empty($record->ID))
+            $this->jedihuntmodel->add($record);
+        else
+            $this->jedihuntmodel->update($record);
+
+        redirect('/admin/jedihunt');
     }
 
 }

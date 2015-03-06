@@ -16,5 +16,5 @@
   {/jedi}
 </table> 
 <!--Added new link for adding new quotation-->
-<a href='/jedihunt/add'>Add a Jedi!</a>
+<a href='/jedihunt/add' class="btn btn-primary btn-success">Add a Jedi!</a>
 </div>

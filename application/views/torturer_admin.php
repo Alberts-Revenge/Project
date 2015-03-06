@@ -4,8 +4,8 @@
     <th>Picture</th>
     <th>Brief</th>
     <th>Description</th>
-    <th>Edit</th>
-    <th>Remove</th>
+    <th></th>
+    <th></th>
   </tr>
   {torturer}
   <tr>
