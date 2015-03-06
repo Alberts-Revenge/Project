@@ -1,6 +1,6 @@
 <table cols="" border="0">
     <tr>
-        <td ><img src="/assets/images/{picture}"</td>
+        <td ><img src="/assets/images/{picture}" height="70" width="70"></td>
     </tr>
 </table>
 <table cols="" border="0">
