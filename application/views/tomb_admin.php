@@ -9,7 +9,7 @@
     </tr>
     {tomb}
     <tr>
-        <td><a href='/admin/tomb_comment_list/{id}'</a>{name}</td>
+        <td><a href='/admin/tomb_comment_list/{id}' class="btn btn-primary">{name}</a></td>
         <td><img src="/assets/images/{picture}" height="100" width="100"/></td>
         <td>{brief}</td>
         <td>{description}</td>
