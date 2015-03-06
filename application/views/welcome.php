@@ -1,4 +1,7 @@
 <div>
+    <a href='/tortureradmin' style="padding-right: 280px">Torturer Admin</a>
+    <a href='/jedihuntadmin' style="padding-right: 280px">JediHunt Admin</a>
+    <a href='/tombsadmin'>Tombs Admin</a>
     <img src="/assets/images/sea-sound.jpg" alt="Img">
     <h1>Welcome to the Dark Lord Hangout!</h1>
     <p>
