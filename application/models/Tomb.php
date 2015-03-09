@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Data access wrapper for "tomb" table.
+ *
+ */
 class Tomb extends MY_Model {
 
     // Constructor

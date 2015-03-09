@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Data access wrapper for "tumbcomment" table.
+ * Data access wrapper for "tombcomment" table.
  *
  */
 class Tombcomment extends MY_Model {

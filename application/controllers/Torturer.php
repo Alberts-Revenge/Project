@@ -44,6 +44,7 @@
 
 class Torturer extends Application {
 
+    // display all torturer locations
     public function index() {
         $this->data['pagebody'] = 'torturer';
 
@@ -52,7 +53,7 @@ class Torturer extends Application {
         $this->render();
     }
 
-    // method to display just a single quote
+    // method to display just a single torturer location
     function one($id) {
         $this->data['pagebody'] = 'justone';    // this is the view we want shown
         $this->data = array_merge($this->data, (array) $this->torturers->get($id));

@@ -46,6 +46,7 @@ class Tombs extends Application {
     }
 
     public function index() {
+        // display all tombs
         $this->data['pagebody'] = 'tombs';
 
         $this->data['planets'] = $this->tomb->all();
@@ -53,7 +54,7 @@ class Tombs extends Application {
         $this->render();
     }
 
-    // method to display just a single quote
+    // method to display just a single tomb
     function one($tombid) {
         $this->data['pagebody'] = 'tomb_comment';    // this is the view we want shown
 
@@ -90,6 +91,7 @@ class Tombs extends Application {
         $this->render();
     }
 
+    //method to add a comment
     function add_comment($tombid) {
         $this->present($tombid);
     }
