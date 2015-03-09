@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2015 at 01:26 AM
+-- Generation Time: Mar 09, 2015 at 01:51 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -63,10 +63,10 @@ CREATE TABLE IF NOT EXISTS `tomb` (
 --
 
 INSERT INTO `tomb` (`id`, `name`, `picture`, `brief`, `description`) VALUES
-(1, 'AARGONAR', 'aargonar.jpg', 'Aargonar was a dusty, desert-climate planet located ....', 'Aargonar was a dusty, desert-climate planet located in the Borderlands Regions of the Mid Rim. '),
-(2, 'ATHISS', 'athiss.png', 'Athiss was the second planet in the Loro Babis system. ....', 'Athiss was the second planet in the Loro Babis system. It was located on the Descri Wris and was close to Korriz and Ziost.'),
-(3, 'YAVIN PRIME', 'yavin.jpg', 'Yavin Prime, also known as Yavin (Yavin pronounced: YAH-vin), ....', 'Yavin Prime, also known as Yavin (Yavin pronounced: YAH-vin), was a bright red gas giant in the Gordian Reach sector (part of the Bright Jewel Oversector).'),
-(4, 'KASHYYYK', 'kashyyyk.jpg', 'Kashyyyk (see pronunciation), also known as Wookiee Planet C, ....', 'Kashyyyk (see pronunciation), also known as Wookiee Planet C, Edean, G5-623, and Wookiee World, was a Mid Rim planet.');
+(1, 'AARGONAR', 'aargonar.jpg', 'Aargonar was a dusty, desert-climate planet located ....', 'Aargonar is home to the tomb of Ajunta Pall, Darth Krayt, Ludo Kressh, and the tomb of the infamous Naga Sadaow!'),
+(2, 'ATHISS', 'athiss.png', 'Athiss was the second planet in the Loro Babis system. ....', 'Athiss features the tomb of Marka Ragnos, Tulak Hord, and the tomb of Darth Bane!'),
+(3, 'YAVIN PRIME', 'yavin.jpg', 'Yavin Prime, also known as Yavin (Yavin pronounced: YAH-vin), ....', 'Yavin Prime hosts only two tombs, however, gaining entry to the tomb has proven troubling for many a Sith Lord. Here we have the tombs of Darth Perash and Dramath the second.'),
+(4, 'KASHYYYK', 'kashyyyk.jpg', 'Kashyyyk (see pronunciation), also known as Wookiee Planet C, ....', 'Kashyyyk is the home of the tomb of Freedon Nadd, Vodal Kressh, Exar Kun, and Sakkra-kla.');
 
 -- --------------------------------------------------------
 
@@ -109,17 +109,17 @@ CREATE TABLE IF NOT EXISTS `torturer` (
   `description` text NOT NULL,
   `vote_total` int(11) NOT NULL,
   `vote_count` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `torturer`
 --
 
 INSERT INTO `torturer` (`id`, `name`, `picture`, `brief`, `description`, `vote_total`, `vote_count`) VALUES
-(1, 'RYLOTH', 'ryloth1.jpg', 'Ryloth, also known as Twi''lek, and Twi''lek Prime,[9] was the harsh, ....', 'Ryloth, also known as Twi''lek, and Twi''lek Prime,[9] was the harsh, rocky homeworld of the Twi''leks, an Outer Rim Territories world located on the Corellian Run and forming one endpoint of the Death Wind Corridor.', 7, 2),
-(2, 'TARIS', 'taris.png', 'Taris was an urban planet in the fifth orbit of its star, ....', 'Taris was an urban planet in the fifth orbit of its star, located in the Taris system, within the Ojoster sector, of the Outer Rim Territories, in turn Taris was orbited by four moons, including Rogue. The term Tarisian was used to describe people and products from the planet.', 5, 2),
-(3, 'DROMUND KAAS', 'dromund_Kaas.png', 'Dromund Kaas was the third planet in the Dromund system, ....', 'Dromund Kaas was the third planet in the Dromund system, a star system in the Sith Worlds region of the Outer Rim Territories''s Esstran sector.', 0, 0),
-(4, 'KORRIBAN', 'korriban.png', 'Korriban, known as Pesegam during the reign of Xim, and also known ....', 'Korriban, known as Pesegam during the reign of Xim, and also known as Moraband by the time of the Clone Wars, was the sole planet in the Horuset system, located across the galaxy from Koros Major.', 6, 2);
+(1, 'RYLOTH', 'ryloth1.jpg', 'Ryloth, also known as Twi''lek, and Twi''lek Prime,[9] was the harsh, ....', 'Ryloth, also known as Twi''lek, and Twi''lek Prime. Ryloth is full of Twi''lek rebels who are withholding information from the empire. If you enjoy their high pitched squeals of agony, this is the planet for you!', 7, 2),
+(2, 'TARIS', 'taris.png', 'Taris was an urban planet in the fifth orbit of its star, ....', 'Taris is an urban planet in the fifth orbit of its star. This planet does not even have enough cell space for all of the captured rebels. There are so many rebels to torture here that you may never have to leave the planet again if you''re truly enjoying yourself. Quantity over quality on Taris.', 5, 2),
+(3, 'DROMUND KAAS', 'dromund_Kaas.png', 'Dromund Kaas was the third planet in the Dromund system, ....', 'Dromund Kaas was the third planet in the Dromund system. There are not many republic followers to torture on Dromund Kaas, however the few that there are have proven extremely tough to break. A dark Lord of the Sith is sure to succeed here where others have failed.', 0, 0),
+(4, 'KORRIBAN', 'korriban.png', 'Korriban, known as Pesegam during the reign of Xim, and also known ....', 'Korriban was the sole planet in the Horuset system. Korriban is of particular interest because here we have a few captured Jedi who are having problems parting with their words. Any Dark Lord would surely revel in the idea of being able to torture Jedi until their point of mental and physical collapse. Jump on this opportunity while you still can!.', 6, 2);
 
 --
 -- Indexes for dumped tables
@@ -167,7 +167,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT for table `torturer`
 --
 ALTER TABLE `torturer`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
