@@ -51,8 +51,7 @@ class Tombs extends Application {
 
         $this->data['planets'] = $this->tomb->all();
         
-        $this->data['comments'] = $this->tombcomment->size();
-
+        
         $this->render();
     }
 
@@ -67,6 +66,7 @@ class Tombs extends Application {
         $comments = $this->tombcomment->some('tombid', $tombid);
         $this->data['allcomments'] = $comments;
 
+        $this->data['numcomment'] = count($comments);
         $this->data['id'] = $tombid;
 
         $this->render();
