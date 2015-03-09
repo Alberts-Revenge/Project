@@ -55,13 +55,5 @@
         <script src="/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
         {caboose_scripts}
         {caboose_trailings}
-        <script src="/asset/tinymce/js/tinymce/tinymce.min.js"></script>
-        <script type="text/javascript">
-        tinymce.init({
-            selector: "textarea",
-            plugins: "link image"
-         });
-         
-        </script>
     </body>
 </html>
