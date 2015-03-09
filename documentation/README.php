@@ -17,5 +17,8 @@
  * certain problems in a tomb and want to help out your fellow dark lords. (yeah right! haha this is probably not going to
  * happen)
  * 
+ * The blue buttons in the tomb admin are to select that certain planet and to be able to delete 1 or more of the comments
+ * for that planet. We have an admin for the comments because you told us to add admin functionality to be able to remove
+ * comments in class.
  */
 
