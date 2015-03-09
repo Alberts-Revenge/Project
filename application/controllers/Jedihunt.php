@@ -15,6 +15,7 @@ class Jedihunt extends Application {
 
         // load the helper to display the form
         $this->load->helper('formfields');
+        // set up the config for image uploading
         $config = array();
         $config['upload_path'] = './assets/images/';
         $config['allowed_types'] = 'gif|jpg|png';
@@ -26,8 +27,8 @@ class Jedihunt extends Application {
     }
 
     function index() {
+        // display a table of all jedi
         $this->data['title'] = 'Most Wanted Jedi';    // this is the view we want shown
-        // $this->data['jedis'] = $this->jedihuntmodel->all();
         $this->data['jedi'] = $this->jedihuntmodel->all();
         $this->data['pagebody'] = 'jedihunt';
         $this->render();
@@ -41,7 +42,7 @@ class Jedihunt extends Application {
                 $message .= $booboo . BR;
         }
         $this->data['message'] = $message;
-
+        // sey up the fields to be displayed in our view
         $this->data['fName'] = makeTextField('Name', 'Name', $jedi->Name);
         $this->data['fLocation'] = makeTextField('Location', 'Location', $jedi->Location);
         //$this->data['fPic'] = makeTextField('Picture', 'Pic', $jedi->Pic);
@@ -54,6 +55,7 @@ class Jedihunt extends Application {
     }
 
     function add() {
+        //create and empty jedi to be populated and added tot he list of jedi
         $jedi = $this->jedihuntmodel->create();
         $this->present($jedi);
     }

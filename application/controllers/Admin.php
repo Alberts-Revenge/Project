@@ -7,6 +7,7 @@ class Admin extends Application {
 
         // load the helper to display the form
         $this->load->helper('formfields');
+        // set up the image uploading settings
         $config = array();
         $config['upload_path'] = './assets/images/';
         $config['allowed_types'] = 'gif|jpg|png';
@@ -18,6 +19,7 @@ class Admin extends Application {
     }
 
     public function torturer() {
+        // display all planets for torturer
         $this->data['pagebody'] = 'torturer_admin';
         $this->data['torturer'] = $this->torturers->all();
 
@@ -25,6 +27,7 @@ class Admin extends Application {
     }
 
     public function torturer_add() {
+        // create a new torturer to add to the list of torturers
         $torturer = $this->torturers->create();
         $this->torturer_present($torturer);
     }
@@ -36,6 +39,7 @@ class Admin extends Application {
     }
 
     public function torturer_edit($id) {
+        // Get a torturer location by its id and bring it up for editing
         $torturer = $this->torturers->get($id);
         $this->torturer_present($torturer);
     }
@@ -103,6 +107,7 @@ class Admin extends Application {
     }
 
     public function tomb() {
+        // display all tombs
         $this->data['pagebody'] = 'tomb_admin';
         $this->data['tomb'] = $this->tomb->all();
 
@@ -116,6 +121,7 @@ class Admin extends Application {
     }
 
     public function tomb_comment_list($tombid) {
+        // display all comments for a certain tomb
         $this->data['pagebody'] = 'tomb_edit_comment';
         $this->data['name'] = $this->tomb->get($tombid)->name;
         $comments = $this->tombcomment->some('tombid', $tombid);
@@ -129,11 +135,13 @@ class Admin extends Application {
     }
 
     public function tomb_add() {
+        // create an empty tomb to be filled out and added to the list of tomb locations
         $tomb = $this->tomb->create();
         $this->tomb_present($tomb);
     }
 
     public function tomb_edit($id) {
+        // choose a tomb by id to edit
         $tomb = $this->tomb->get($id);
         $this->tomb_present($tomb);
     }
@@ -203,6 +211,7 @@ class Admin extends Application {
         redirect('/admin/tomb');
     }
     public function jedihunt() {
+        // display all jedi
         $this->data['pagebody'] = 'jedihunt_admin';
         $this->data['jedihunt'] = $this->jedihuntmodel->all();
 
@@ -210,6 +219,7 @@ class Admin extends Application {
     }
 
     public function jedihunt_add() {
+        // create an empty jedi to be populated and added to the list of jedi
         $jedihunt = $this->jedihuntmodel->create();
         $this->jedihunt_present($jedihunt);
     }
@@ -221,6 +231,7 @@ class Admin extends Application {
     }
 
     public function jedihunt_edit($id) {
+        // get a jedi by id and display it for editinig
         $jedihunt = $this->jedihuntmodel->get($id);
         $this->jedihunt_present($jedihunt);
     }

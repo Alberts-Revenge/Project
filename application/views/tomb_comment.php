@@ -8,7 +8,7 @@
         <td><h1>{name}</h1></td>        
     </tr>
     <tr>
-        <td>{description}</td>
+        <th>{description}</th>
     </tr>
     <tr>
         <td><h1>Comments</h1></td>
