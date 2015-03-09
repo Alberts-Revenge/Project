@@ -11,7 +11,7 @@
         <th>{description}</th>
     </tr>
     <tr>
-        <td><h1>Comments</h1></td>
+        <td><h1>Comments - {numcomment}</h1> </td>
     </tr>
     {allcomments}
     <tr>

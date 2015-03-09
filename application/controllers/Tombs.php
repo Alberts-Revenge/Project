@@ -50,7 +50,8 @@ class Tombs extends Application {
         $this->data['pagebody'] = 'tombs';
 
         $this->data['planets'] = $this->tomb->all();
-
+        
+        
         $this->render();
     }
 
@@ -65,6 +66,7 @@ class Tombs extends Application {
         $comments = $this->tombcomment->some('tombid', $tombid);
         $this->data['allcomments'] = $comments;
 
+        $this->data['numcomment'] = count($comments);
         $this->data['id'] = $tombid;
 
         $this->render();
@@ -80,8 +82,11 @@ class Tombs extends Application {
         }
         $this->data['message'] = $message;
 
-        $this->data['name'] = $this->tomb->get($tombid)->name;
         $this->data['tombid'] = $tombid;
+        $this->data['name'] = $this->tomb->get($tombid)->name;
+        $this->data['picture'] = $this->tomb->get($tombid)->picture;
+        $this->data['brief'] = $this->tomb->get($tombid)->brief;
+        $this->data['description'] = $this->tomb->get($tombid)->description;
         $record = ($id == null) ? $this->tombcomment->create() : $this->tombcomment->get($id);
         $this->data['fcomment'] = makeTextArea('Comment', 'comment', $record->comment);
         $this->data['pagebody'] = 'tomb_add_comment';
