@@ -42,22 +42,47 @@
  * @filesource
  */
 
-defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Torturer extends Application {
 
+    // display all torturer locations
     public function index() {
-//		$this->load->view('torturer');
         $this->data['pagebody'] = 'torturer';
-        // set up data for torturer view
-        $source = $this->info->all_for_torturer();
-        $planets = array();
-        foreach ($source as $record) {
-            $planets[] = array('planet' => $record['planet'], 'pic' => $record['pic'], 'info' => $record['info']);
-        }
-        $this->data['planets'] = $planets;
+
+        $this->data['planets'] = $this->torturers->all();
 
         $this->render();
+    }
+
+    // method to display just a single torturer location
+    function one($id) {
+        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+        $this->data = array_merge($this->data, (array) $this->torturers->get($id));
+
+        // invoke the rating widget
+        $this->caboose->needed('jrating', 'hollywood');
+        $this->data['average'] = ($this->data['vote_count'] > 0) ? ($this->data['vote_total'] / $this->data['vote_count']) : 0;
+//        echo $this->data['average'];
+//        die();
+        $this->render();
+    }
+
+    // handle a rating
+    function rate() {
+        // detect non-AJAX entry
+        if (!isset($_POST['action']))
+            redirect("/");
+        // extract parameters
+        $id = intval($_POST['idBox']);
+        $rate = intval($_POST['rate']);
+        // update the posting
+        $record = $this->torturers->get($id);
+        if ($record != null) {
+            $record->vote_total += $rate;
+            $record->vote_count++;
+            $this->torturers->update($record);
+        }
+        $response = 'Thanks for voting!';
+        echo json_encode($response);
     }
 
 }

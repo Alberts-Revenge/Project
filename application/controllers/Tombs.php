@@ -36,36 +36,90 @@
  * @since	Version 1.0.0
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Tombs extends Application {
 
-    /**
-     * Index Page for this controller.
-     *
-     * Maps to the following URL
-     * 		http://example.com/index.php/welcome
-     * 	- or -
-     * 		http://example.com/index.php/welcome/index
-     * 	- or -
-     * Since this controller is set as the default controller in
-     * config/routes.php, it's displayed at http://example.com/
-     *
-     * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
-     * @see http://codeigniter.com/user_guide/general/urls.html
-     */
+    function __construct() {
+        parent::__construct();
+
+        // load the helper to display the form
+        $this->load->helper('formfields');
+    }
+
     public function index() {
-        //$this->load->view('tombs');
+        // display all tombs
         $this->data['pagebody'] = 'tombs';
-        // set up data for tombs view
-        $source = $this->info->all_for_tombs();
-        $planets = array();
-        foreach ($source as $record) {
-            $planets[] = array('planet' => $record['planet'], 'pic' => $record['pic'], 'info' => $record['info']);
-        }
-        $this->data['planets'] = $planets;
+
+        $this->data['planets'] = $this->tomb->all();
+        
+        
         $this->render();
+    }
+
+    // method to display just a single tomb
+    function one($tombid) {
+        $this->data['pagebody'] = 'tomb_comment';    // this is the view we want shown
+
+        $this->data['name'] = $this->tomb->get($tombid)->name;
+        $this->data['picture'] = $this->tomb->get($tombid)->picture;
+        $this->data['description'] = $this->tomb->get($tombid)->description;
+
+        $comments = $this->tombcomment->some('tombid', $tombid);
+        $this->data['allcomments'] = $comments;
+
+        $this->data['numcomment'] = count($comments);
+        $this->data['id'] = $tombid;
+
+        $this->render();
+    }
+
+    // Present a comment for adding/editing
+    function present($tombid, $id = null) {
+        // format any errors
+        $message = '';
+        if (count($this->errors) > 0) {
+            foreach ($this->errors as $booboo)
+                $message .= $booboo . BR;
+        }
+        $this->data['message'] = $message;
+
+        $this->data['tombid'] = $tombid;
+        $this->data['name'] = $this->tomb->get($tombid)->name;
+        $this->data['picture'] = $this->tomb->get($tombid)->picture;
+        $this->data['brief'] = $this->tomb->get($tombid)->brief;
+        $this->data['description'] = $this->tomb->get($tombid)->description;
+        $record = ($id == null) ? $this->tombcomment->create() : $this->tombcomment->get($id);
+        $this->data['fcomment'] = makeTextArea('Comment', 'comment', $record->comment);
+        $this->data['pagebody'] = 'tomb_add_comment';
+
+        // added the button with the formfileds helper
+        $this->data['fsubmit'] = makeSubmitButton('New Comment', "Click here to validate the comment data", 'btn-success');
+        $this->render();
+    }
+
+    //method to add a comment
+    function add_comment($tombid) {
+        $this->present($tombid);
+    }
+
+    // process a quotation edit
+    function confirm($tombid) {
+        $record = $this->tombcomment->create();
+        // Extract submitted fields
+
+        $record->id = $this->tombcomment->size() + 1;
+        $record->tombid = $tombid;
+        $record->comment = $this->input->post('comment');
+
+        // validation
+//        if (empty($record->comment))
+//            $this->errors[] = 'You must leave some comment.';
+//        if (strlen($record->comment) < 20)
+//            $this->errors[] = 'A comment must be at least 20 characters long.';
+
+
+        $this->tombcomment->add($record);
+
+        redirect('/tombs/one/' . $tombid);
     }
 
 }

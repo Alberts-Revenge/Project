@@ -10,11 +10,11 @@
   <tr>
     <td style="padding-right: 20px">{Name}</td>
     <td style="padding-right: 20px">{Location}</td>
-    <td style="padding-right: 20px">{Pic}</td>
+    <td style="padding-right: 20px"><img src="/assets/images/{Pic}" height="70" width="70"/></td>
     <td>{Description}</td>
   </tr>
   {/jedi}
 </table> 
 <!--Added new link for adding new quotation-->
-<a href='../index.php/jedihunt/add'>Add a Jedi!</a>
+<a href='/jedihunt/add' class="btn btn-primary btn-success">Add a Jedi!</a>
 </div>
